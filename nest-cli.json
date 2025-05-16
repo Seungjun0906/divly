@@ -1,0 +1,14 @@
+{
+	"monorepo": true,
+	"projects": {
+		"main": {
+			"type": "application",
+			"root": "api/divly-api",
+			"entryFile": "main",
+			"sourceRoot": "api/divly-api/src",
+			"compilerOptions": {
+				"tsConfigPath": "api/divly-api/tsconfig.json"
+			}
+		}
+	}
+}
