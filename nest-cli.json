@@ -3,9 +3,9 @@
 	"projects": {
 		"main": {
 			"type": "application",
-			"root": "api/divly-api",
+			"root": "api/main",
 			"entryFile": "main",
-			"sourceRoot": "api/divly-api/src",
+			"sourceRoot": "api/main/src",
 			"compilerOptions": {
 				"tsConfigPath": "api/divly-api/tsconfig.json"
 			}
