@@ -1,0 +1,59 @@
+networks:
+  cinewise-network:
+    driver: bridge
+services:
+  db:
+    container_name: divly-db
+    image: postgres:17.2
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: divly
+      PGDATA: /var/lib/postgresql/divly-db
+    volumes:
+      - ../../divly-db/postgres:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - 5430:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: dev.seungjunkim@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - ../../divly-db/pgadmin:/var/lib/pgadmin
+
+  # cinewise-api-main:
+  #   container_name: cinewise-api-main
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.api
+  #     args:
+  #       - PROJECT=@repo/cinewise-api
+  #       - PROJECT_DIR=cinewise-api
+
+  #   ports:
+  #     - "8080:8080"
+  #   environment:
+  #     DB_HOST: cinewise-db
+  #     DB_PORT: 5432
+  #     DB_USER: postgres
+  #     DB_PW: postgres
+  #     DB_NAME: cinewise
+
+  #   depends_on:
+  #     - db
+
+  # cinewise-logger:
+  #   container_name: cinewise-api-logger
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.api
+  #     args:
+  #       - PROJECT=@repo/cinewise-logger
+  #       - PROJECT_DIR=cinewise-logger
+
+  #   ports:
+  #     - "4000:4000"
