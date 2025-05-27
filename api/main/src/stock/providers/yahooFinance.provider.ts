@@ -17,9 +17,6 @@ export class YahooFinanceProvider implements StockDataProvider {
   async getStockInfo(symbol: string): Promise<StockInfo> {
     try {
       const quote = await yf.quote(symbol);
-      console.log('====================================');
-      console.log(quote);
-      console.log('====================================');
 
       return {
         symbol: quote.symbol,

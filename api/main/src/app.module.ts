@@ -9,7 +9,6 @@ import { DividendHistoryModule } from './dividend-history/dividend-history.modul
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import path from 'node:path';
-console.log(process.env.DB_HOST);
 
 @Module({
   imports: [
