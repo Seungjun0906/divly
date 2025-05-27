@@ -1,34 +1,22 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { StockService } from './stock.service';
-import { CreateStockDto } from './dto/create-stock.dto';
-import { UpdateStockDto } from './dto/update-stock.dto';
+import { Controller, Get, Param } from '@nestjs/common';
+import { StockDataService } from './services/stockData.service';
 
-@Controller('stock')
+@Controller('stocks')
 export class StockController {
-  constructor(private readonly stockService: StockService) {}
+  constructor(private readonly stockDataService: StockDataService) {}
 
-  @Post()
-  create(@Body() createStockDto: CreateStockDto) {
-    return this.stockService.create(createStockDto);
+  @Get(':symbol')
+  async getStock(@Param('symbol') symbol: string) {
+    return await this.stockDataService.getStockInfo(symbol);
   }
 
-  @Get()
-  findAll() {
-    return this.stockService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.stockService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateStockDto: UpdateStockDto) {
-    return this.stockService.update(+id, updateStockDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.stockService.remove(+id);
+  @Get(':symbol/dividend-history')
+  async getDividendHistory(@Param('symbol') symbol: string) {
+    const startDate = new Date('2020-01-01');
+    const history = await this.stockDataService.getDividendHistory(
+      symbol,
+      startDate,
+    );
+    return history;
   }
 }
