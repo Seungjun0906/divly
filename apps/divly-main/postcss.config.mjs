@@ -1,1 +1,1 @@
-export { postcssConfig } from "@divly/tailwind-config/postcss";
+export { default } from "@divly/tailwind-config/postcss";
