@@ -7,8 +7,7 @@
     "module": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@lib": ["./src/lib/*"]
+      "@divly/ui/*": ["./src/*"]
     },
 
     /* Bundler mode */
