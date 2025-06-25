@@ -7,5 +7,23 @@
     {
       "mode": "auto"
     }
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    // 배열 안의 문자열
+    "\\[([^\\]]*)\\]",
+    // 객체 값에서의 문자열 배열
+    ":\\s*\\[([^\\]]*)\\]",
+    // 일반적인 클래스 문자열
+    "\"([^\"]*)\""
+  ],
+  "tailwindCSS.includeLanguages": {
+    "typescript": "typescript",
+    "typescriptreact": "typescriptreact"
+  },
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    ".*Classes.*"
   ]
 }
