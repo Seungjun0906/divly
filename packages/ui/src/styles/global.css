@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./typography.css";
 
 @theme {
   /* === 주 브랜드 컬러 (제공된 팔레트 기반) === */
