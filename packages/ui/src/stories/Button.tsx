@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./button.css";
 
 export interface ButtonProps {
@@ -29,10 +27,9 @@ export const Button = ({
   return (
     <button
       type="button"
-      // className={["storybook-button", `storybook-button--${size}`, mode].join(
-      //   " "
-      // )}
-      className="bg-primary-300 cursor-pointer"
+      className={["storybook-button", `storybook-button--${size}`, mode].join(
+        " "
+      )}
       style={{ backgroundColor }}
       {...props}
     >

@@ -7,7 +7,12 @@
     "module": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "@divly/ui/*": ["./src/*"]
+      "@divly/ui/*": ["./src/*"],
+      "@divly/ui/lib/utils": ["./src/lib/utils"],
+      "@divly/ui/components": ["./src/components"],
+      "@divly/ui/components/*": ["./src/components/*"],
+      "@divly/ui/lib/*": ["./src/lib/*"],
+      "@divly/ui/hooks/*": ["./src/hooks/*"]
     },
 
     /* Bundler mode */
